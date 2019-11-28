@@ -23,7 +23,7 @@ class PizzaIngredientFactory(object):
 
 class Pizza(object):
 
-    def __init__(self, pizzaName):
+    def __init__(self, pizzaName = "Imaginary Pizza"):
         self.pizzaName = pizzaName
         self.dough = ""
         self.sauce = ""
