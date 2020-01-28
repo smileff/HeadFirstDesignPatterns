@@ -2,7 +2,8 @@
 
 import random
 
-# I don't want
+# In this design, the logic is put into the state class, to avoid a large logic in the GumballMachine, and adding new state won't affect the existing state.
+# GumballState and GumballMachine call methods of each other, make the code a bit harder to understand.
 
 class GumballState(object):
 
