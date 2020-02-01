@@ -11,6 +11,9 @@ class GumballState(object):
         self.stateName = stateName
         self.gumballMachine = gumballMachine
 
+    def getName(self):
+        return self.stateName
+
     def insertQuarter(self):
         print "# Nothing happens."
 
@@ -161,6 +164,9 @@ class GumballMachine(object):
         else:
             raise Exception("Gumball machine out of gumball.")
 
+    def getState(self):
+        return self.currState
+
     def __str__(self):
         return "# Gumball Machine, gumball count: {}, current state: {}.".format(self.gumballCount, self.currState)
 
@@ -207,4 +213,5 @@ def Test1():
     gumballMachine.turnCrank()
     print gumballMachine
 
-Test1()
+if __name__ == "__main__":
+    Test1()
