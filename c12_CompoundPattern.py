@@ -1,5 +1,12 @@
 # The Compound Pattern
 
+# Use a lot pattern together to solve the problem: 
+# Adapter pattern to adapt goose to a quackable.
+# Decorator pattern to count quack numbers.
+# Composite and iterator pattern to manage quackable group.
+# Observer pattern to let quackologist know ducks are quacking.
+# It's realy a messy, hard to understand.
+
 # The Observer pattern to make our class obeserverable
 class Observer(object):
     def update(self, observable):
@@ -19,7 +26,9 @@ class Observable(object):
         for observer in self.observers:
             observer.update(self.subject)
 
+
 # The interface of a quackable duck and its concrete class
+# Use composition to put observer into the Quackable, instead of inheriting the Observable class.
 
 class Quackable(object):
 
@@ -38,20 +47,6 @@ class Quackable(object):
     def notifyObservers(self):
         self.observable.notifyObservers()
 
-
-# Use composite to put observer and quackable together
-# Although it's said perferring composite to inherit, composite require us to add
-# a lot wrapper functions.
-
-# class QuackableObservable(Quackable):
-#     def __init__(self):
-#         self.observable = Observable(self)
-
-#     def registerObserver(self, observer):
-#         self.observable.registerObserver(observer)
-
-#     def notifyObservers(self):
-#         self.observable.notifyObservers()
 
 # The concrete quackable classes.
 
