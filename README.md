@@ -5,4 +5,4 @@ This is the example/trial codes I write while reading the book: *Head First Desi
 ## Chapter 1: StrategyPattern
 Delegate some behaviors to some other class by composition.
 Composition makes it possible to change the behavior in runtime, but it also require us to write a lot wrapper functions. 
-![TestImage](read_me_images/c01_StrategyPattern.png)
+![c01_StrategyPattern](readme_images/c01_StrategyPattern.png)
