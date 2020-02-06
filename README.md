@@ -10,4 +10,5 @@ Composition makes it possible to change the behavior in runtime, but it also req
 
 ## Chapter 2: Observer Pattern
 Register an object implementing the Observer interface, and call its update method when need to notify it that something has happened.
+
 ![ObserverPattern](readme_images/c02_ObserverPattern.png)
