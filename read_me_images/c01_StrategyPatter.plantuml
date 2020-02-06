@@ -1,0 +1,30 @@
+@startuml
+
+interface Duck {
++setFlyBehavior(FlyBehavior)
++setQuackBehavior(QuackBehavior)
++performFly()
++performQuack()
+-FlyBehavior flyBehavior
+-QuackBehavior quackBehavior
+}
+
+interface FlyBehavior {
++fly()
+}
+
+interface QuackBehavior {
++quack()
+}
+
+Duck*--FlyBehavior:delegate fly action
+Duck*--QuackBehavior:delegate quack action
+
+Duck<|..MallardDuck
+
+FlyBehavior <|.. FlyRocketPowered
+FlyBehavior <|.. FlyNoWay
+
+QuackBehavior <|.. QuackLoudly
+
+@enduml
