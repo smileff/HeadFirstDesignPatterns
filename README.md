@@ -4,4 +4,4 @@ This is the example/trial codes I write while reading the book: *Head First Desi
 
 ## Chapter 1: StrategyPattern
 
-![TestImage](https://1drv.ms/u/s!Apd944oi7yxFgpRc9a4spxs8A73uJg?e=f3BdZR)
+![TestImage](read_me_images/hahaha.gif)
