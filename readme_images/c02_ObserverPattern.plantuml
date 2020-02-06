@@ -1,0 +1,32 @@
+@startuml
+abstract Observer {
+    +update(Subject)
+}
+
+abstract Subject {
+    +registerObserver(Observer)
+    +unregisterObserver(Observer)
+    +notifyObservers()
+}
+
+abstract Display {
+    +display()
+}
+
+Subject ..> Observer : register
+
+WeatherData --|> Subject
+
+WeatherData ..> TemperatureDisplay : register
+Display <|-- TemperatureDisplay
+Observer <|-- TemperatureDisplay
+
+WeatherData ..> HumidityDisplay : register
+Display <|-- HumidityDisplay
+Observer <|-- HumidityDisplay
+
+WeatherData ..> PressureDisplay : register
+Display <|-- PressureDisplay
+Observer <|-- PressureDisplay
+
+@enduml

@@ -1,6 +1,6 @@
 @startuml
 
-interface Duck {
+abstract Duck {
 +setFlyBehavior(FlyBehavior)
 +setQuackBehavior(QuackBehavior)
 +performFly()
@@ -20,7 +20,7 @@ interface QuackBehavior {
 Duck*--FlyBehavior:delegate fly action
 Duck*--QuackBehavior:delegate quack action
 
-Duck<|..MallardDuck
+Duck<|--MallardDuck
 
 FlyBehavior <|.. FlyRocketPowered
 FlyBehavior <|.. FlyNoWay
