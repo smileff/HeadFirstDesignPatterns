@@ -41,7 +41,9 @@ Encapsulate actions into objects, then these actions could be stored / operated 
 
 ## Chapter 7: Adaptor(Adapter) and Facade Pattern
 Adaptor pattern wrap the interface of one class to the interface of another class, in order to let the instance of the first class to work where the latter is required.
+
 ![AdaptorPattern](readme_images/c07_AdaptorPattern.png)
 
-Facade pattern make a simpler interface to operate the object of a complex class (or a set of objects of different complex classes). The lost is we can't directly control some parameters. 
+Facade pattern make a simpler interface to operate the object of a complex class (or a set of objects of different complex classes). The lost is we can't directly control some parameters.
+ 
 ![FacadePattern](readme_images/c07_FacadePattern.png)
