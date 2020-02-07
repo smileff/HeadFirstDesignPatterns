@@ -63,4 +63,10 @@ Composite pattern is used to handle a collection of elements in the same way as 
 ![CompositePattern](readme_images/c09_IteratorAndCompositePattern.png)
 
 
-## Chapter 10: 
+## Chapter 10: State Pattern
+
+To avoid write a huge logic full of "if" and "switch", we can adapt the state pattern to divide complex logics and encapsulate each part into a state object. This make the code easy to ready, and changes to one state don't affect the other states. 
+
+![StatePattern](readme_images/c10_StatePattern.png)
+
+

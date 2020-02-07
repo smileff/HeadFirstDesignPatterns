@@ -1,0 +1,31 @@
+@startuml StatePattern
+
+class GumballMachine {
+    -GumballState currState
+    +insertQuarter()
+    +ejectQuater()
+    +turnCrank()
+    +dispense()
+    +refille()
+    +setState(GumballState)
+}
+
+abstract GumballState {
+    +getName()
+    +insertQuarter()
+    +ejectQuarter()
+    +turnCrank()
+    +dispense()
+    +refill()
+}
+
+GumballMachine *-- "delegate operation to state" GumballState
+GumballState --> "set state" GumballMachine
+
+GumballState <|-- GumballStateNoQuarter
+GumballState <|-- GumballStateHasQuarter
+GumballState <|-- GumballStateSold
+GumballState <|-- GumballWinner
+GumballState <|-- GumballStateSoldOut
+
+@enduml
