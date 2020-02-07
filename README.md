@@ -13,12 +13,17 @@ Register an object implementing the Observer interface, and call its update meth
 
 ![ObserverPattern](readme_images/c02_ObserverPattern.png)
 
-## Chapter 3: DecoratorPattern
+## Chapter 3: Decorator Pattern
 Wrap a method, adding some additional functions.
 
 ![DecoratorPattern](readme_images/c03_DecoratorPattern.png)
 
-## Chapter 4: FatoryMethodPattern
+## Chapter 4: Factory Method Pattern
 Encapusulate the concrete class creation into interfrace method, so the client codes could create object from interfaces.
 
 ![FactoryMethodPattern](readme_images/c04_FactoryMethodPattern.png)
+
+## Chapter 5: Singleton Pattern
+Use static instance object to make sure there can only be one single instance of a class.
+
+![SingletonPattern](readme_images/c05_SingletonPattern.png)

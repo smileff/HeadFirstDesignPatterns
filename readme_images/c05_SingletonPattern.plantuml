@@ -1,0 +1,9 @@
+@startuml
+
+class ChocolateBoiler {
+    +{static} ChocolateBoiler getInstance()
+    -{static} ChocolateBoiler singleInstance
+    -ChocolateBoilder() // If possible, make the constructor inaccessible.
+}
+
+@enduml
