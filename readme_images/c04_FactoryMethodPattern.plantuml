@@ -17,7 +17,7 @@ PizzaStore *-- PizzaIngredientFactory : Delegate ingredient generation to PizzaI
 PizzaStore --> Pizza : Create instance
 Pizza <-- PizzaIngredientFactory : Provide ingredient
 
-Package NY {
+together NY {
     Pizza <|.. NYCheesePizza
     Pizza <|.. NYBeefPizza
     Pizza <|.. NYFruitPizza
@@ -25,7 +25,7 @@ Package NY {
     PizzaStore <|.. NYPizzaStore
 }
 
-Package Chicago {
+together Chicago {
     Pizza <|.. ChicagoCheesePizza
     Pizza <|.. ChicagoBeefPizza
     Pizza <|.. ChicagoFruitPizza
