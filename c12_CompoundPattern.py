@@ -147,7 +147,7 @@ class QuackCounter(Quackable):
 
 
 # Use the factory pattern to encapsolute the object creation
-class AbstractDuckFactory(object):
+class DuckFactory(object):
 
     @staticmethod
     def createMallardDuck():
@@ -217,11 +217,11 @@ class DuckSimulator(object):
 
         quackologist = Quackologist()
 
-        mallardDuck = AbstractDuckFactory.createMallardDuck()
-        redHeadDuck = AbstractDuckFactory.createRedheadDuck()
-        duckCall = AbstractDuckFactory.createDuckCall()
-        rubberDuck = AbstractDuckFactory.createRubberDuck()
-        goose = AbstractDuckFactory.createGoose()
+        mallardDuck = DuckFactory.createMallardDuck()
+        redHeadDuck = DuckFactory.createRedheadDuck()
+        duckCall = DuckFactory.createDuckCall()
+        rubberDuck = DuckFactory.createRubberDuck()
+        goose = DuckFactory.createGoose()
 
         flockOfDucks = DuckFlock()
         flockOfDucks.add(mallardDuck)
@@ -230,11 +230,11 @@ class DuckSimulator(object):
         flockOfDucks.add(rubberDuck)
         flockOfDucks.add(goose)
 
-        mallardOne = AbstractDuckFactory.createMallardDuck()
-        mallardTwo = AbstractDuckFactory.createMallardDuck()
-        mallardThree = AbstractDuckFactory.createMallardDuck()
-        mallardFour = AbstractDuckFactory.createMallardDuck()
-        mallardFive = AbstractDuckFactory.createMallardDuck()
+        mallardOne = DuckFactory.createMallardDuck()
+        mallardTwo = DuckFactory.createMallardDuck()
+        mallardThree = DuckFactory.createMallardDuck()
+        mallardFour = DuckFactory.createMallardDuck()
+        mallardFive = DuckFactory.createMallardDuck()
         
         flockOfMallards = DuckFlock()
         flockOfMallards.add(mallardOne)

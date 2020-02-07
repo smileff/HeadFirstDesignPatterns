@@ -1,0 +1,79 @@
+@startuml ModelViewControllerPattern
+
+abstract Observer {
+    +{abstract}update(Observable)
+}
+
+class Observable {
+    +registerObserver(Observer)
+    +notifyObservers()
+}
+note top: observer pattern
+Observable --> Observer : call Observer.update()
+
+class BeatApplication {
+    +turnOn()
+    +turnOff()
+    +isTurnedOn()
+    +setBPM()
+    +getBPM()
+    +setVolume()
+    +getVolume()
+}
+
+class BeatModel {
+    -BeatApplication beatApp
+    -Observable observable
+    +turnOn()                   // delegate to beatApp
+    +turnOff()
+    +isTurnedOn()
+    +setBPM()
+    +getBPM()
+    +setVolume()
+    +getVolume()   
+    +registerPowerObserver()    // delegate to observable
+    +registerBPMObserver()      
+    +registerVolumeObservable() 
+}
+
+abstract BeatControllerInterface {
+    -BeatModel beatModel
+    +turnBeatOn()
+    +turnBeatOff()
+    +increaseBPM()
+    +decreaseBPM()
+    +increaseVolume()
+    +decreaseVolume()
+}
+note top: strategy pattern
+
+class DJView {
+    -BeatControllerInterface controller
+    +update(BetaModel beatModel)
+}
+
+class BeatController {
+    -BeatModel beatModel
+    +turnBeatOn()
+    +turnBeatOff()
+    +increaseBPM()
+    +decreaseBPM()
+    +increaseVolume()
+    +decreaseVolume()
+}
+
+Observable --* BeatModel
+Observer <|.. DJView
+BeatModel ..> Observer : update 
+
+BeatApplication --* BeatModel
+
+BeatControllerInterface --* Observer : transform input to model actions
+BeatModel <-- Observer : require data
+
+BeatModel <-- BeatControllerInterface : make change
+
+BeatControllerInterface <|.. BeatController
+
+
+@enduml

@@ -1,0 +1,70 @@
+@startuml CompoundPattern
+
+abstract Observer {
+    +{abstract}update(Observable)
+}
+
+class Observable {
+    +registerObserver(Observer)
+    +notifyObservers()
+}
+
+note top: observer pattern
+
+abstract Quackable {
+    +quack()
+    +registerObserver(Observer)
+    +notifyObservers()
+    -Obserable observable
+}
+
+Observable --* Quackable
+Observable --> Observer : call Observer.update()
+
+class GooseAdaptor {
+    +quack()
+}
+note top: adaptor pattern
+
+Goose --* GooseAdaptor
+Quackable <|-- GooseAdaptor
+
+class QuackCounter {
+    +quack()
+}
+note top: decorator pattern
+
+Quackable <|-- QuackCounter
+
+Quackable <|.. MallardDuck
+Quackable <|.. RedHeadDuck
+Quackable <|.. DuckCall
+Quackable <|.. RubberDuck
+
+class DuckFactory {
+    +{static} Quackable createMallardDuck()
+    +{static} Quackable createRedHeadDuck()
+    +{static} Quackable createDuckCall()
+    +{static} Quackable createRubberDuck()
+    +{static} Quackable createGoose()
+}
+note top: simple factory idiom (strictly it's not the factory pattern).
+
+DuckFactory --> MallardDuck
+DuckFactory --> RedHeadDuck
+DuckFactory --> DuckCall
+DuckFactory --> RubberDuck
+DuckFactory --> GooseAdaptor
+DuckFactory --> QuackCounter
+
+
+class DuckFlock {
+    +add(Quackable)
+    +registerObserver(Observer)
+}
+note top: composite pattern
+Quackable <|-- DuckFlock
+
+Observer <|.. Quackologist
+
+@enduml

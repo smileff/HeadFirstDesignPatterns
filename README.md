@@ -71,6 +71,17 @@ To avoid write a huge logic full of "if" and "switch", we can adapt the state pa
 
 
 ## Chapter 11: Proxy Pattern
-The goal of proxy pattern is to control the access. There are a lot different types of proxy, here I tried the remote proxy, 
+The goal of proxy pattern is to control the access. There are a lot different types of proxy, here I tried the remote proxy.
 
 ![ProxyPattern](readme_images/c11_ProxyPattern.png)
+
+
+## Chapter 12: CompoundPattern and ModelViewController
+
+In real application, we may need to use a lot of patterns together to solve one problem. So compund pattern is to put several patterns together.
+
+![CompundPattern](readme_images/c12_CompoundPattern.png)
+
+The model-view-controller pattern is an example of compund pattern, and is widely adapted. Here is an simple example.
+![ModelViewControllerPattern](readme_images/c12_ModelViewControllerPattern.png)
+(Some pointer in this diagram is not accurate. I intent to do so to visualize the role of each class more clear.)
