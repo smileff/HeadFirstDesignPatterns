@@ -45,5 +45,11 @@ Adaptor pattern wrap the interface of one class to the interface of another clas
 ![AdaptorPattern](readme_images/c07_AdaptorPattern.png)
 
 Facade pattern make a simpler interface to operate the object of a complex class (or a set of objects of different complex classes). The lost is we can't directly control some parameters.
- 
+
 ![FacadePattern](readme_images/c07_FacadePattern.png)
+
+
+## Chapter 8: Tempalte Pattern
+Delegate some steps in a algorithm to other classes (like child classes).
+
+![TemplatePattern](readme_images/c08_TemplatePattern.png)

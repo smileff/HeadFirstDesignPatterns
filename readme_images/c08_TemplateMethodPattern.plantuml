@@ -1,0 +1,33 @@
+@startuml
+
+class CoffeineBeverage {
+    +prepareBeverage()  // Call boilWater(), brew(), pourInCup(), doesCustomerWantsCondiments() and addCondiments().
+    -boilWater()
+    -{abstract}brew()
+    -pourInCup()
+    -{abstract}doesCustomerWantsCondiments()
+    -{abstract}addCondiments()
+}
+
+class Coffee {
+    -brew()
+    -doesCustomerWantsCondiments()
+    -addCondiments()
+} 
+CoffeineBeverage <|-- Coffee
+
+class Tea {
+    -brew()
+    -doesCustomerWantsCondiments()
+    -addCondiments()
+} 
+CoffeineBeverage <|-- Tea
+
+class PureWater {
+    -brew()
+    -doesCustomerWantsCondiments()
+    -addCondiments()
+} 
+CoffeineBeverage <|-- PureWater
+
+@enduml
