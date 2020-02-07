@@ -1,0 +1,57 @@
+@startuml
+
+abstract Duck {
+    +getName()
+    +quack()
+    +fly()
+}
+
+abstract Turkey {
+    +getName()
+    +gobble()
+    +fly()
+}
+
+abstract TurkeyToDuckAdaptor {
+    +getName()  // Call turkey.getName()
+    +quack()    // Call turkey.gobble
+    +fly()      // Call turkey.fly() several times
+    -Turkey turkey
+}
+
+Duck <|-- TurkeyToDuckAdaptor
+TurkeyToDuckAdaptor *-- Turkey
+
+Turkey <|-- FatTurkey
+
+
+class TV {
+    +on()
+    +off()
+}
+
+class Amp {
+    +on()
+    +volumeUp()
+    +off()
+    +volumeDown()
+}
+
+class CoffeeMachine {
+    +on()
+    +makeCoffee()
+    +off()
+}
+
+class LivingRoomFacade {
+    -TV tv
+    -Amp amp
+    -CoffeeMachine coffeeMachine
+    +startWatchTV()     // Call methods of TV, Amp and CoffeeMachine to prepare for enjoy TV shows.
+    +stopWatchTV()      // Call methods to TV, Amp and CoffeeMachine to clean up.
+}
+LivingRoomFacade *-- TV
+LivingRoomFacade *-- Amp
+LivingRoomFacade *-- CoffeeMachine
+
+@enduml
