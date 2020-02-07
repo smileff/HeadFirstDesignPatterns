@@ -27,3 +27,9 @@ Encapusulate the concrete class creation into interfrace method, so the client c
 Use static instance object to make sure there can only be one single instance of a class.
 
 ![SingletonPattern](readme_images/c05_SingletonPattern.png)
+
+## Chapter 6: Command Pattern
+Encapsulate actions into objects, then these actions could be stored / operated as data.
+
+![CommandPattern](readme_images/c06_CommandPattern.png)
+

@@ -1,0 +1,37 @@
+@startuml
+
+abstract Command {
+    +execute()
+    +undo()
+    +description()
+}
+
+abstract RemoteControl {
+    +setCommand(int index, Command onCommand, Command offCommand)
+    +onCommandPressed(int index)
+    +offCommandPressed(int index)
+    +undo()
+    -addCommandToHistory(Command command)
+    -onCommandList = [Command]
+    -offCommandList = [Command]
+    -commandHistory = [Command]  // Used as a stack to store the historical commands.
+}
+
+Command <|-- EmptyCommand
+RemoteControl --> EmptyCommand
+
+RemoteControl --> Command : store commands, call command's methods
+
+Command <|.. LightOnCommand
+Command <|.. LightOffCommand
+LightOnCommand *-- Light : control
+LightOffCommand *-- Light : control
+
+Command <|-- CeilingFanCommand
+CeilingFanCommand <|.. CeilingFanHighCommand
+CeilingFanCommand <|.. CeilingFanMiddleCommand
+CeilingFanCommand <|.. CeilingFanLowCommand
+CeilingFanCommand <|.. CeilingFanOffCommand
+CeilingFanCommand *-- CeilingFan : Control
+
+@enduml
