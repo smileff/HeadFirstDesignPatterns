@@ -1,0 +1,37 @@
+@startuml
+
+abstract Pizza {
+    +setIngredient(Ingredient)
+}
+
+abstract PizzaIngredientFactory {
+    +createIngredient()
+}
+
+abstract PizzaStore {
+    +orderPizza(String pizzaName)
+}
+
+PizzaStore *-- PizzaIngredientFactory : Delegate ingredient generation to PizzaIngredientFactory
+
+PizzaStore --> Pizza : Create instance
+Pizza <-- PizzaIngredientFactory : Provide ingredient
+
+Package NY {
+    Pizza <|.. NYCheesePizza
+    Pizza <|.. NYBeefPizza
+    Pizza <|.. NYFruitPizza
+    PizzaIngredientFactory <|.. NYPizzaIngredientFactory
+    PizzaStore <|.. NYPizzaStore
+}
+
+Package Chicago {
+    Pizza <|.. ChicagoCheesePizza
+    Pizza <|.. ChicagoBeefPizza
+    Pizza <|.. ChicagoFruitPizza
+
+    PizzaIngredientFactory <|.. ChicagoPizzaIngredientFactory
+    PizzaStore <|.. ChicagoPizzaStore
+}
+
+@enduml

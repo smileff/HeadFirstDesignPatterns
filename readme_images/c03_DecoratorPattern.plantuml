@@ -1,0 +1,21 @@
+@startuml
+
+abstract Beverage {
+    +cost()
+    +description()
+}
+
+abstract Decorator {
+    +cost()
+    +description()
+}
+
+Beverage <|-- "Wrap cost & description" Decorator
+
+Beverage <|.. HouseBlend
+Beverage <|.. Expresso
+
+Decorator <|.. WithMilk
+Decorator <|.. WithSuger
+
+@enduml
