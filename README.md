@@ -84,6 +84,7 @@ In real application, we may need to use a lot of patterns together to solve one 
 
 The model-view-controller pattern is an example of compund pattern, and is widely adapted. Here is an simple example.
 ![ModelViewControllerPattern](readme_images/c12_ModelViewControllerPattern.png)
+
 (Some pointer in this diagram is not accurate. I intent to do so to visualize the role of each class more clear.)
 
 
