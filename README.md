@@ -85,3 +85,12 @@ In real application, we may need to use a lot of patterns together to solve one 
 The model-view-controller pattern is an example of compund pattern, and is widely adapted. Here is an simple example.
 ![ModelViewControllerPattern](readme_images/c12_ModelViewControllerPattern.png)
 (Some pointer in this diagram is not accurate. I intent to do so to visualize the role of each class more clear.)
+
+
+## Finally, my opinions
+
+When reading this book, there are a few times I was talking to myself: "wow, I have used this designs in my work before, but that time I just don't know it has such a name. Does spending so much time reading this book really improve my programming skill? Am I really learning the correct way to organize codes?"
+
+Then the final chapter of this book just tell me: make the design as simple as possible, only use these design patterns when they seems naturally fit the problem.
+
+So I guess this book again tell me that there's no formulas to organize codes. Learning design patterns doesn't mean we can find a fixed coding pipeline that fits every problem. We still need to study to problem we want to solve, think which parts make it complex, make trade-offs and finally strive for the simplest way to express our solution in coding language. Design patterns are just some time-proved experience we can learn and adapt in such processes. Good codes depends on the logic and experience of the programmer, and that's what makes programming an art.
