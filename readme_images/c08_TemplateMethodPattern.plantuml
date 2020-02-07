@@ -1,4 +1,4 @@
-@startuml
+@startuml TemplateMethodPattern
 
 class CoffeineBeverage {
     +prepareBeverage()  // Call boilWater(), brew(), pourInCup(), doesCustomerWantsCondiments() and addCondiments().

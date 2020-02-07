@@ -1,4 +1,5 @@
-@startuml
+@startuml ObserverPattern
+
 abstract Observer {
     +update(Subject)
 }

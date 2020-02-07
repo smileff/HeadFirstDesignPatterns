@@ -55,9 +55,12 @@ Delegate some steps in a algorithm to other classes (like child classes).
 ![TemplatePattern](readme_images/c08_TemplatePattern.png)
 
 
-## Chapter 9 Iterator and Composite Pattern
+## Chapter 9: Iterator and Composite Pattern
 The iterator pattern is used to encapsulate the details of iterating the elements in a collection, which may be very complex, such as accessing each node in a tree in DFS order.
 
 Composite pattern is used to handle a collection of elements in the same way as handling a simple element. 
 
 ![CompositePattern](readme_images/c09_IteratorAndCompositePattern.png)
+
+
+## Chapter 10: 
