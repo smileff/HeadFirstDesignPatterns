@@ -1,0 +1,29 @@
+@startuml ProxyPattern
+
+class GumballMachine {
+    +getState()
+    +getGumballNumber()
+}
+
+class GumballMachineProxy {
+    +getName()
+    +getState()
+    +getGumballNumber()
+}
+
+class GumballMachineServer {
+    +{static}GumballMachineServer getInstance()
+    +getMachineGumballNumber(String machineName)
+    +getMachineGumballState(String machineName)
+}
+
+GumballMachineProxy --> GumballMachineServer : Require machine data from the sever.
+GumballMachine <-- GumballMachineServer : Query the real data from real machine.
+GumballMachineProxy ... GumballMachine : GumballMachineProxy is a remote proxy of GumballMachine.
+
+class GumballMachineMonitor {
+    -GumballMachineProxy gumballMachineProxy
+}
+GumballMachineMonitor *== GumballMachineProxy
+
+@enduml

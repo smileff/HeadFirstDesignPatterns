@@ -70,3 +70,7 @@ To avoid write a huge logic full of "if" and "switch", we can adapt the state pa
 ![StatePattern](readme_images/c10_StatePattern.png)
 
 
+## Chapter 11: Proxy Pattern
+The goal of proxy pattern is to control the access. There are a lot different types of proxy, here I tried the remote proxy, 
+
+![ProxyPattern](readme_images/c11_ProxyPattern.png)
