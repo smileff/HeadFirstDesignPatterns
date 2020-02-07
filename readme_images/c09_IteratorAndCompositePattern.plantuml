@@ -1,0 +1,69 @@
+@startuml
+
+class MenuItem {}
+
+abstract MenuIterator {
+    +hasNext()
+    +MenuItem next()
+}
+
+MenuItem <-- MenuIterator : access MenuItem by MenuIterator.next()
+
+abstract Menu {
+    +MenuIterator createIterator()
+}
+
+Menu --> MenuIterator : create
+
+MenuIterator <|-- ListMenuIterator
+Menu <|-- ListMenu
+ListMenu --> ListMenuIterator : create
+
+MenuIterator <|-- DictMenuIterator
+Menu <|-- DictMenu
+DictMenu --> DictMenuIterator : create
+
+class TreeMenuNodeIterator {
+    + hasNext()
+    + ext()
+    + peek()
+}
+
+class TreeMenuNode {
+    -children = [TreeMenuNode]
+    +add(TreeMenuNode)
+    +TreeMenuNodeIterator createIterator()
+}
+
+note top of TreeMenuNode
+    TreeMenuNode is where the composite pattern takes place: 
+    TreeMenuNode.children could contain either intermediate nodes (TreeMenuNode) 
+    or leaf nodes (MenuItem). In the book, a common base class is used to unify 
+    the interface of an intermediate node and a leaf node. But I choose to let 
+    them have different interfaces to make the logic more clear.
+end note
+
+class TreeMenuIterator {
+    -iterStack = [TreeMenuNodeIterator]     // A stack to perform DFS iteration.
+    +hasNext()
+    +TreeMenuIterator next()
+}
+
+class TreeMenu {
+    -TreeMenuNode root  // The root of the node tree"
+    +add()
+    +TreeMenuIterator createIterator()
+}
+
+MenuIterator <|-- TreeMenuIterator
+Menu <|-- TreeMenu
+TreeMenu --> TreeMenuIterator : create
+
+TreeMenu *-- TreeMenuNode
+TreeMenuIterator *-- TreeMenuNodeIterator : Use node iterator to traversal a node.
+
+TreeMenuNode --> TreeMenuNodeIterator : create
+
+
+
+@enduml

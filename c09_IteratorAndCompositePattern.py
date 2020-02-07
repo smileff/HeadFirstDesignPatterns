@@ -36,7 +36,7 @@ class MenuIterator(object):
         raise Exception("Call not implemented method MenuIterator.hasNext.")
         return False
 
-    def next(object):
+    def next(self):
         # Should return an MenuItem
         raise Exception("Call not implemented method MenuIterator.next.")
         return None
